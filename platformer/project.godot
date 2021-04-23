@@ -23,6 +23,13 @@ _global_script_class_icons={
 config/name="Platformer"
 config/icon="res://icon.png"
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="coins"
+2d_physics/layer_4="world"
+
 [physics]
 
 common/enable_pause_aware_picking=true
