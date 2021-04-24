@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UserInterface/RetryButton.gd" type="Script" id=1]
+
+[node name="RetryButton" type="Button"]
+margin_right = 194.0
+margin_bottom = 50.0
+size_flags_vertical = 3
+text = "Retry"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="button_up" from="." to="." method="_onn_button_up"]
