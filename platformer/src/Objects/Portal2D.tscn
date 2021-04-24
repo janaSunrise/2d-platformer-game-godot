@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 68.0
+radius = 74.0
 height = 66.0
 
 [sub_resource type="Animation" id=2]
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 
 [node name="Portal2D" type="Area2D"]
@@ -80,7 +80,6 @@ shape = SubResource( 1 )
 layer = 100
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
