@@ -55,7 +55,7 @@ position = Vector2( 1066, 297 )
 position = Vector2( 1151, 254 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1299, 304 )
+position = Vector2( 186, 184 )
 
 [editable path="Player"]
 [editable path="Coin"]
