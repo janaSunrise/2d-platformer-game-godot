@@ -1,7 +1,0 @@
-[gd_scene format=2]
-
-[node name="PlayButton" type="Button"]
-margin_right = 194.0
-margin_bottom = 50.0
-size_flags_vertical = 3
-text = "Play"
