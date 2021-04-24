@@ -6,6 +6,10 @@ export var stomp_impulse: = 1000.0
 
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
+	
+
+func _on_EnemyDetector_body_entered(body: Node) -> void:
+	queue_free()
 
 
 func _physics_process(delta: float) -> void:
