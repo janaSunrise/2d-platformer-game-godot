@@ -82,5 +82,4 @@ shape = SubResource( 1 )
 autoplay = "bouncing"
 anims/bouncing = SubResource( 2 )
 anims/fade_out = SubResource( 3 )
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,28 +1,34 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=6]
 
 [node name="UserInterface" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -124.0
-margin_bottom = 31.0
+margin_left = -154.0
+margin_top = 22.0
+margin_right = -18.0
+margin_bottom = 62.0
 text = "Score: %S"
 align = 2
 
 [node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.235294 )
@@ -50,7 +56,7 @@ __meta__ = {
 margin_right = 240.0
 margin_bottom = 67.0
 
-[node name="ChangeSceneButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 4 )]
+[node name="SceneChangeButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 4 )]
 margin_top = 71.0
 margin_right = 240.0
 margin_bottom = 138.0
@@ -60,4 +66,4 @@ next_scene_path = "res://src/Screens/MainScreen.tscn"
 [node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 3 )]
 margin_top = 142.0
 margin_right = 240.0
-margin_bottom = 210.0
+margin_bottom = 209.0
