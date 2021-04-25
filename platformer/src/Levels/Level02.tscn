@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=7]
-[ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=8]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
@@ -1670,15 +1668,7 @@ __meta__ = {
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="UserInterface2" type="Control" parent="UserInterface" instance=ExtResource( 9 )]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 7 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="UserInterface2" parent="UserInterface" instance=ExtResource( 9 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
@@ -1707,235 +1697,239 @@ position = Vector2( 588, 532 )
 [node name="Camera2D" parent="Player" index="2"]
 limit_right = 9850
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 1801, 532 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 2610, 532 )
 
-[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 3563, 531 )
 
-[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 4570, 94 )
 
-[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 5679, 364 )
 
-[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 6245, 495 )
 
-[node name="Enemy7" parent="." instance=ExtResource( 3 )]
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 6494, 495 )
 
-[node name="Enemy8" parent="." instance=ExtResource( 3 )]
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 6718, 495 )
 
-[node name="Enemy9" parent="." instance=ExtResource( 3 )]
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 6964, 490 )
 
-[node name="Enemy10" parent="." instance=ExtResource( 3 )]
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 8641, 532 )
 
-[node name="Enemy11" parent="." instance=ExtResource( 3 )]
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 8945, 530 )
 
-[node name="Coin" parent="." instance=ExtResource( 5 )]
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 961, 340 )
 
-[node name="Coin2" parent="." instance=ExtResource( 5 )]
+[node name="Coin2" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1093, 340 )
 
-[node name="AnimationPlayer" parent="Coin2" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin2" index="2"]
 anims/bouncing = SubResource( 1 )
 anims/fade_out = SubResource( 2 )
 
-[node name="Coin3" parent="." instance=ExtResource( 5 )]
+[node name="Coin3" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1219, 340 )
 
-[node name="AnimationPlayer" parent="Coin3" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin3" index="2"]
 anims/bouncing = SubResource( 3 )
 anims/fade_out = SubResource( 4 )
 
-[node name="Coin4" parent="." instance=ExtResource( 5 )]
+[node name="Coin4" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1751, 175 )
 
-[node name="AnimationPlayer" parent="Coin4" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin4" index="2"]
 anims/bouncing = SubResource( 5 )
 anims/fade_out = SubResource( 6 )
 
-[node name="Coin5" parent="." instance=ExtResource( 5 )]
+[node name="Coin5" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1855, 175 )
 
-[node name="AnimationPlayer" parent="Coin5" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin5" index="2"]
 anims/bouncing = SubResource( 7 )
 anims/fade_out = SubResource( 8 )
 
-[node name="Coin6" parent="." instance=ExtResource( 5 )]
+[node name="Coin6" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 2732, 132 )
 
-[node name="AnimationPlayer" parent="Coin6" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin6" index="2"]
 anims/bouncing = SubResource( 9 )
 anims/fade_out = SubResource( 10 )
 
-[node name="Coin7" parent="." instance=ExtResource( 5 )]
+[node name="Coin7" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 3185, 199 )
 
-[node name="AnimationPlayer" parent="Coin7" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin7" index="2"]
 anims/bouncing = SubResource( 11 )
 anims/fade_out = SubResource( 12 )
 
-[node name="Coin8" parent="." instance=ExtResource( 5 )]
+[node name="Coin8" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 3688, 132 )
 
-[node name="AnimationPlayer" parent="Coin8" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin8" index="2"]
 anims/bouncing = SubResource( 13 )
 anims/fade_out = SubResource( 14 )
 
-[node name="Coin9" parent="." instance=ExtResource( 5 )]
+[node name="Coin9" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 4073, 270 )
 
-[node name="AnimationPlayer" parent="Coin9" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin9" index="2"]
 anims/bouncing = SubResource( 15 )
 anims/fade_out = SubResource( 16 )
 
-[node name="Coin10" parent="." instance=ExtResource( 5 )]
+[node name="Coin10" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 4175, 340 )
 
-[node name="AnimationPlayer" parent="Coin10" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin10" index="2"]
 anims/bouncing = SubResource( 17 )
 anims/fade_out = SubResource( 18 )
 
-[node name="Coin11" parent="." instance=ExtResource( 5 )]
+[node name="Coin11" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 5159, 363 )
 
-[node name="AnimationPlayer" parent="Coin11" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin11" index="2"]
 anims/bouncing = SubResource( 19 )
 anims/fade_out = SubResource( 20 )
 
-[node name="Coin12" parent="." instance=ExtResource( 5 )]
+[node name="Coin12" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 5159, 223 )
 
-[node name="AnimationPlayer" parent="Coin12" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin12" index="2"]
 anims/bouncing = SubResource( 21 )
 anims/fade_out = SubResource( 22 )
 
-[node name="Coin13" parent="." instance=ExtResource( 5 )]
+[node name="Coin13" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 5159, 94 )
 
-[node name="AnimationPlayer" parent="Coin13" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin13" index="2"]
 anims/bouncing = SubResource( 23 )
 anims/fade_out = SubResource( 24 )
 
-[node name="Coin14" parent="." instance=ExtResource( 5 )]
+[node name="Coin14" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 6109, 314 )
 
-[node name="AnimationPlayer" parent="Coin14" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin14" index="2"]
 anims/bouncing = SubResource( 25 )
 anims/fade_out = SubResource( 26 )
 
-[node name="Coin15" parent="." instance=ExtResource( 5 )]
+[node name="Coin15" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 6357, 270 )
 
-[node name="AnimationPlayer" parent="Coin15" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin15" index="2"]
 anims/bouncing = SubResource( 27 )
 anims/fade_out = SubResource( 28 )
 
-[node name="Coin16" parent="." instance=ExtResource( 5 )]
+[node name="Coin16" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 6597, 175 )
 
-[node name="AnimationPlayer" parent="Coin16" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin16" index="2"]
 anims/bouncing = SubResource( 29 )
 anims/fade_out = SubResource( 30 )
 
-[node name="Coin17" parent="." instance=ExtResource( 5 )]
+[node name="Coin17" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 6829, 271 )
 
-[node name="AnimationPlayer" parent="Coin17" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin17" index="2"]
 anims/bouncing = SubResource( 31 )
 anims/fade_out = SubResource( 32 )
 
-[node name="Coin18" parent="." instance=ExtResource( 5 )]
+[node name="Coin18" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 7089, 338 )
 
-[node name="AnimationPlayer" parent="Coin18" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin18" index="2"]
 anims/bouncing = SubResource( 33 )
 anims/fade_out = SubResource( 34 )
 
-[node name="Coin19" parent="." instance=ExtResource( 5 )]
+[node name="Coin19" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 7402, 364 )
 
-[node name="AnimationPlayer" parent="Coin19" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin19" index="2"]
 anims/bouncing = SubResource( 35 )
 anims/fade_out = SubResource( 36 )
 
-[node name="Coin20" parent="." instance=ExtResource( 5 )]
+[node name="Coin20" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 7402, 270 )
 
-[node name="AnimationPlayer" parent="Coin20" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin20" index="2"]
 anims/bouncing = SubResource( 37 )
 anims/fade_out = SubResource( 38 )
 
-[node name="Coin21" parent="." instance=ExtResource( 5 )]
+[node name="Coin21" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 7402, 156 )
 
-[node name="AnimationPlayer" parent="Coin21" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin21" index="2"]
 anims/bouncing = SubResource( 39 )
 anims/fade_out = SubResource( 40 )
 
-[node name="Coin22" parent="." instance=ExtResource( 5 )]
+[node name="Coin22" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 7802, 422 )
 
-[node name="AnimationPlayer" parent="Coin22" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin22" index="2"]
 anims/bouncing = SubResource( 41 )
 anims/fade_out = SubResource( 42 )
 
-[node name="Coin23" parent="." instance=ExtResource( 5 )]
+[node name="Coin23" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 7889, 417 )
 
-[node name="AnimationPlayer" parent="Coin23" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin23" index="2"]
 anims/bouncing = SubResource( 43 )
 anims/fade_out = SubResource( 44 )
 
-[node name="Coin24" parent="." instance=ExtResource( 5 )]
+[node name="Coin24" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 8342, 422 )
 
-[node name="AnimationPlayer" parent="Coin24" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin24" index="2"]
 anims/bouncing = SubResource( 45 )
 anims/fade_out = SubResource( 46 )
 
-[node name="Coin25" parent="." instance=ExtResource( 5 )]
+[node name="Coin25" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 8695, 271 )
 
-[node name="AnimationPlayer" parent="Coin25" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin25" index="2"]
 anims/bouncing = SubResource( 47 )
 anims/fade_out = SubResource( 48 )
 
-[node name="Coin26" parent="." instance=ExtResource( 5 )]
+[node name="Coin26" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 9279, 340 )
 
-[node name="AnimationPlayer" parent="Coin26" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin26" index="2"]
 anims/bouncing = SubResource( 49 )
 anims/fade_out = SubResource( 50 )
 
-[node name="Coin27" parent="." instance=ExtResource( 5 )]
+[node name="Coin27" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 9348, 340 )
 
-[node name="AnimationPlayer" parent="Coin27" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin27" index="2"]
 anims/bouncing = SubResource( 51 )
 anims/fade_out = SubResource( 52 )
 
-[node name="Coin28" parent="." instance=ExtResource( 5 )]
+[node name="Coin28" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 8774, 271 )
 
-[node name="AnimationPlayer" parent="Coin28" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin28" index="2"]
 anims/bouncing = SubResource( 53 )
 anims/fade_out = SubResource( 54 )
 
-[node name="Coin29" parent="." instance=ExtResource( 5 )]
+[node name="Coin29" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 8774, 271 )
 
-[node name="AnimationPlayer" parent="Coin29" index="2"]
+[node name="AnimationPlayer" parent="Coins/Coin29" index="2"]
 anims/bouncing = SubResource( 55 )
 anims/fade_out = SubResource( 56 )
 
@@ -1943,32 +1937,32 @@ anims/fade_out = SubResource( 56 )
 position = Vector2( 9279, 94 )
 
 [editable path="Player"]
-[editable path="Coin"]
-[editable path="Coin2"]
-[editable path="Coin3"]
-[editable path="Coin4"]
-[editable path="Coin5"]
-[editable path="Coin6"]
-[editable path="Coin7"]
-[editable path="Coin8"]
-[editable path="Coin9"]
-[editable path="Coin10"]
-[editable path="Coin11"]
-[editable path="Coin12"]
-[editable path="Coin13"]
-[editable path="Coin14"]
-[editable path="Coin15"]
-[editable path="Coin16"]
-[editable path="Coin17"]
-[editable path="Coin18"]
-[editable path="Coin19"]
-[editable path="Coin20"]
-[editable path="Coin21"]
-[editable path="Coin22"]
-[editable path="Coin23"]
-[editable path="Coin24"]
-[editable path="Coin25"]
-[editable path="Coin26"]
-[editable path="Coin27"]
-[editable path="Coin28"]
-[editable path="Coin29"]
+[editable path="Coins/Coin"]
+[editable path="Coins/Coin2"]
+[editable path="Coins/Coin3"]
+[editable path="Coins/Coin4"]
+[editable path="Coins/Coin5"]
+[editable path="Coins/Coin6"]
+[editable path="Coins/Coin7"]
+[editable path="Coins/Coin8"]
+[editable path="Coins/Coin9"]
+[editable path="Coins/Coin10"]
+[editable path="Coins/Coin11"]
+[editable path="Coins/Coin12"]
+[editable path="Coins/Coin13"]
+[editable path="Coins/Coin14"]
+[editable path="Coins/Coin15"]
+[editable path="Coins/Coin16"]
+[editable path="Coins/Coin17"]
+[editable path="Coins/Coin18"]
+[editable path="Coins/Coin19"]
+[editable path="Coins/Coin20"]
+[editable path="Coins/Coin21"]
+[editable path="Coins/Coin22"]
+[editable path="Coins/Coin23"]
+[editable path="Coins/Coin24"]
+[editable path="Coins/Coin25"]
+[editable path="Coins/Coin26"]
+[editable path="Coins/Coin27"]
+[editable path="Coins/Coin28"]
+[editable path="Coins/Coin29"]
