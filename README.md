@@ -4,7 +4,7 @@ A fun platformer game made using Godot Game engine.
 
 ## How to run this?
 
-To run this, You need Godot engine installed. Install it, if you have not yet from [here](https://godotengine.com).
+To run this, You need Godot engine installed. Install it, if you have not yet from [here](https://godotengine.org).
 
 Then once done, Import the project and Open the Main screen scene and others. Run using FN + F5 to start from 
 main screen, or FN + F6 to start from current scene.
