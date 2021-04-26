@@ -1189,7 +1189,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="Level01" type="Node2D"]
 __meta__ = {
 "_edit_vertical_guides_": [ 6800.0 ]
 }
