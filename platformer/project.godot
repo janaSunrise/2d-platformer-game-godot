@@ -28,6 +28,14 @@ config/icon="res://icon.png"
 
 PlayerData="*res://src/Autoload/PlayerData.tscn"
 
+[display]
+
+window/size/fullscreen=true
+
+[global]
+
+"full screen"=false
+
 [input]
 
 move_left={

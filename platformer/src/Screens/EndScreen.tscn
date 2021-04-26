@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=2]
-[ext_resource path="res://src/UserInterface/PlayButton.gd" type="Script" id=3]
-[ext_resource path="res://src/UserInterface/QuitButton.gd" type="Script" id=4]
+[ext_resource path="res://src/Screens/EndScreen.gd" type="Script" id=3]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=7]
@@ -12,6 +11,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,24 +62,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="Menu" instance=ExtResource( 6 )]
+[node name="PlayButton" parent="Menu" instance=ExtResource( 6 )]
 margin_right = 256.0
 margin_bottom = 59.0
-size_flags_vertical = 3
 text = "Play Again"
-script = ExtResource( 3 )
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
-[node name="QuitButton" type="Button" parent="Menu" instance=ExtResource( 5 )]
+[node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]
 margin_top = 63.0
 margin_right = 256.0
 margin_bottom = 122.0
-size_flags_vertical = 3
-text = "Quit"
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="button_up" from="Menu/PlayButton" to="Menu/PlayButton" method="_on_button_up"]
-[connection signal="button_up" from="Menu/QuitButton" to="Menu/QuitButton" method="_on_button_up"]
