@@ -50,11 +50,11 @@ You can add a level as follows:
   give user a hint to reach portal. Once that's done, Place enemies randomly to make it a bit hard 
   and challenging for user. Finally place the portal in end, and Find the next scene in the File 
   browser in left hand side, Drag it and place in the right configuration panel of `next_scene`.
-  Rename the cloned level to level number, such as if the level number is 4, I'll name the main node
+  Rename the cloned level to level number, such as if the level number is `4`, I'll name the main node
   to `Level04`.
 
-  **NOTE**: If you're making a level in the middle, for example Level02, You need to rename everything after
-  that, For, example Level02 to Level03, Level03 to Level 04. Else if you're making a end level, Link the 
+  **NOTE**: If you're making a level in the middle, for example `Level02`, You need to rename everything after
+  that, For, example `Level02` to `Level03`, `Level03` to `Level04`. Else if you're making a end level, Link the 
   level before that to the level you made, and Add EndScreen in Screens for the last level you made.
 
   YOU can Link the levels using the `next_scene` variable as noted.
